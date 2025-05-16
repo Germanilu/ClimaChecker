@@ -88,6 +88,7 @@ export default function useWeather() {
     const appId = import.meta.env.VITE_API_KEY
     setLoading(true)
     setWeather(initialState)
+    setNotFound(false)
 
     try {
       //Get the Lat & Lon from external API
@@ -139,6 +140,7 @@ export default function useWeather() {
       console.log(error)
     } finally {
       setLoading(false)
+
     }
   }
 
